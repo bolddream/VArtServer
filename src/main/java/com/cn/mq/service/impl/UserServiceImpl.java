@@ -18,6 +18,14 @@ public class UserServiceImpl implements IUserService {
 		// TODO Auto-generated method stub
 		return this.userDao.selectByPrimaryKey(userId);
 	}
+	
+	public int addNewUser(String userName) {
+		User newUser = new User();
+		newUser.setAge(12);
+		newUser.setPassword("121221");
+		newUser.setUserName(userName);
+		return this.userDao.insert(newUser);
+	}
 
 //	//@Override
 //	public User findUserById(int id) {

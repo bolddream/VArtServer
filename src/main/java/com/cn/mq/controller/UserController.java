@@ -27,9 +27,8 @@ public class UserController {
 	
 	@RequestMapping("/addUser")
 	public String addUser(HttpServletRequest request,Model model){
-		int userId = Integer.parseInt(request.getParameter("id"));
-		User user = this.userService.getUserById(userId);
-		model.addAttribute("user", user);
+		String userName = request.getParameter("name");
+		int success = this.userService.addNewUser(userName);
 		return "addUser";
 	}
 	
